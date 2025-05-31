@@ -1,26 +1,14 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
 import numpy as np
-from utils.utils import model, scaler
+from utils.utils import model, scaler, PatientData
 
 
 # initialize app
 app = FastAPI(
     title="Diabetes Prediction API",
-    description="A service that predicts the presence or absence of diabetes in a patient.",
+    description="A simple service that predicts the presence or absence of diabetes in a patient.",
     version="1.0"
 )
-
-# input schema
-class PatientData(BaseModel):
-    Pregnancies: int
-    Glucose: float
-    BloodPressure: float
-    SkinThickness: float
-    Insulin: float
-    BMI: float
-    DPF: float   # DiabetesPedigreeFunction
-    Age: int
 
 # prediction route
 @app.post("/predict")
