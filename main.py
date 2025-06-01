@@ -6,7 +6,7 @@ from utils.utils import model, scaler, PatientData
 # initialize app
 app = FastAPI(
     title="Diabetes Prediction API",
-    description="A simple service that predicts the presence or absence of diabetes in a patient.",
+    description="A simple service that predicts the presence of diabetes in a patient.",
     version="1.0"
 )
 
