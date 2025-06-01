@@ -7,6 +7,6 @@ spec:
     app: diabetes-predictor
   ports:
     - protocol: TCP
-      port: 80
+      port: 50
       targetPort: 8000
   type: LoadBalancer
