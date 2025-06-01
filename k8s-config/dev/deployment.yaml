@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: diabetes-predictor
+  labels:
+    app: diabetes-predictor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: diabetes-predictor
+  template:
+    metadata:
+      labels:
+        app: diabetes-predictor
+    spec:
+      containers:
+      - name: diabetes-predictor
+        image: danial92gh/fastapi-diabetes-jenkins:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
